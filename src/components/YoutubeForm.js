@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+import { Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 
@@ -19,14 +19,13 @@ const validationSchema = Yup.object({
 });
 
 const YoutubeForm = () => {
-  const formik = useFormik({
-    initialValues,
-    onSubmit,
-    validationSchema,
-  });
   console.log("Visiter Field: ", formik.touched);
   return (
-    <div>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
       <form onSubmit={formik.handleSubmit}>
         <div className="form-control">
           <label htmlFor="name">Name</label>
@@ -69,7 +68,7 @@ const YoutubeForm = () => {
 
         <button type="submit">Submit</button>
       </form>
-    </div>
+    </Formik>
   );
 };
 
