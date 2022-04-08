@@ -7,7 +7,11 @@ const initialValues = {
   name: "",
   email: "",
   channel: "",
-  Comments: "",
+  comments: "",
+  social: {
+    facebook: "",
+    twitter: "",
+  },
 };
 
 const onSubmit = (values) => {
@@ -54,7 +58,19 @@ const YoutubeForm = () => {
         <div className="=form-control">
           <label htmlFor="comments">Comments</label>
           <Field as="textarea" type="text" id="comments" name="comments" />
-          <ErrorMessage name="channel" component={TextError} />
+          <ErrorMessage name="comments" component={TextError} />
+        </div>
+
+        <div className="=form-control">
+          <label htmlFor="facebook">Facebook</label>
+          <Field type="text" id="facebook" name="social.facebook" />
+          <ErrorMessage name="social.facebook" component={TextError} />
+        </div>
+
+        <div className="=form-control">
+          <label htmlFor="twitter">Twitter</label>
+          <Field type="text" id="twitter" name="social.twitter" />
+          <ErrorMessage name="social.twitter" component={TextError} />
         </div>
 
         <button type="submit">Submit</button>
