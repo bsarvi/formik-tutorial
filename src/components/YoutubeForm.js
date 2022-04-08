@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 
@@ -26,7 +26,7 @@ const YoutubeForm = () => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      <form onSubmit={formik.handleSubmit}>
+      <Form>
         <div className="form-control">
           <label htmlFor="name">Name</label>
           <input
@@ -67,7 +67,7 @@ const YoutubeForm = () => {
         </div>
 
         <button type="submit">Submit</button>
-      </form>
+      </Form>
     </Formik>
   );
 };
