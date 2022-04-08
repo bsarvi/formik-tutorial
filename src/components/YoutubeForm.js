@@ -8,11 +8,14 @@ const YoutubeForm = () => {
       email: "",
       channel: "",
     },
+    onSubmit: (values) => {
+      console.log("Form Data:", values);
+    },
   });
-  console.log("Form values: ", formik.values);
+  //   console.log("Form values: ", formik.values);
   return (
     <div>
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <div className="form-control">
           <label htmlFor="name">Name</label>
           <input
