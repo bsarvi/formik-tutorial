@@ -46,6 +46,9 @@ const YoutubeForm = () => {
             onChange={formik.handleChange}
             value={formik.values.name}
           />
+          {formik.errors.name ? (
+            <div className="error">{formik.errors.name}</div>
+          ) : null}
         </div>
 
         <div className="form-control">
@@ -57,6 +60,9 @@ const YoutubeForm = () => {
             onChange={formik.handleChange}
             value={formik.values.email}
           />
+          {formik.errors.email ? (
+            <div className="error">{formik.errors.email}</div>
+          ) : null}
         </div>
 
         <div className="form-control">
@@ -68,6 +74,9 @@ const YoutubeForm = () => {
             onChange={formik.handleChange}
             value={formik.values.channel}
           />
+          {formik.errors.channel ? (
+            <div className="error">{formik.errors.channel}</div>
+          ) : null}
         </div>
 
         <button type="submit">Submit</button>
